@@ -14,7 +14,7 @@ When testing network services such a [REST API](https://en.wikipedia.org/wiki/Re
 This repository contains 290 open Socks5 servers that are available for use. The code has been created so that you can plugin your own code directly into ours and start using the Socks5 proxys right away. Though, the code is directed for usage on HTTP servers, you can modify this to work with TCP/UDP sockets as well as web sockets.
 
 ## Requirements
-* Java 7 or higher
+* Java 8 or higher
 
 ## Usage
 See below sample code:
