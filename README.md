@@ -17,7 +17,30 @@ This repository contains 290 open Socks5 servers that are available for use. The
 * Java 7 or higher
 
 ## Usage
-To be documented.
+See below sample code:
+```
+    public static void main(String[] args) throws IOException {
+        Socks5 socks5 = new Socks5();
+
+        /* Ignore any SSL warnings */
+        socks5.trustAllSSL();
+
+        /* Load our proxy list */
+        socks5.loadProxyFile("socks5.txt");
+
+        /* Or we can manually add a proxy to the list */
+        socks5.add("213.251.238.186:9050");
+
+        ExampleSocks5 exampleSocks5 = new ExampleSocks5();
+
+        /*
+         * Call our example REST API call 10 times for each proxy.
+         * Since there are 290 registered proxies, all 290 servers will run our request
+         * 10 times sequentially.
+         */
+        socks5.run(10, exampleSocks5);
+    }
+```
 
 ## Contributing
 Contributions are welcome whether it is for small bug fixes or new pieces of major functionality. To contribute changes, you should first fork the upstream repository to your own GitHub account. You can then add a new remote for `upstream` and rebase any changes you make and keep up-to-date with the upstream.
